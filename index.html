@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
     
 </head>
 <body>
     <div class="gallery-container">
-        <div class="gallery-item" data-index="1"><img src="images/p-1.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="2"><img src="images/p-2.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="3"><img src="images/p-3.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="4"><img src="images/p-4.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="5"><img src="images/p-5.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="6"><img src="images/p-6.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="7"><img src="images/p-7.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="8"><img src="images/p-8.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="9"><img src="images/p-9.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="10"><img src="images/p-10.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="11"><img src="images/p-11.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="12"><img src="images/p-12.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="13"><img src="images/p-13.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="14"><img src="images/p-14.jpeg"alt=""></div>
-        <div class="gallery-item" data-index="15"><img src="images/p-15.webp"alt=""></div>
+        <div class="gallery-item" data-index="1"><img src="images/1st.jpg"alt=""></div>
+        <div class="gallery-item" data-index="2"><img src="images/2nd.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="3"><img src="images/3rd.jpg"alt=""></div>
+        <div class="gallery-item" data-index="4"><img src="images/4th.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="5"><img src="images/5th.webp"alt=""></div>
+        <div class="gallery-item" data-index="6"><img src="images/6th.webp"alt=""></div>
+        <div class="gallery-item" data-index="7"><img src="images/7th.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="8"><img src="images/8th.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="9"><img src="images/9th.webp"alt=""></div>
+        <div class="gallery-item" data-index="10"><img src="images/swiss.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="11"><img src="images/switxzer.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="12"><img src="images/p-1.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="13"><img src="images/p-2.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="14"><img src="images/p-3.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="15"><img src="images/p-4.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="16"><img src="images/p-5.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="17"><img src="images/p-6.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="18"><img src="images/p-7.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="19"><img src="images/p-8.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="20"><img src="images/p-9.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="21"><img src="images/p-10.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="22"><img src="images/p-11.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="23"><img src="images/p-12.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="24"><img src="images/p-13.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="25"><img src="images/p-14.jpeg"alt=""></div>
+        <div class="gallery-item" data-index="26"><img src="images/p-15.webp"alt=""></div>
 
     </div>
 <script>const galleryItem = document.getElementsByClassName("gallery-item");
@@ -35,21 +46,15 @@
     const lightBoxContent = document.createElement("div");
     //for images
     const lightBoxImg = document.createElement("img");
-    //for prev button to change images
-    const lightBoxPrev = document.createElement("div");
-    //for next buttton
-    const lightBoxNext = document.createElement("div");
     
     //create classlist
     lightBoxContainer.classList.add('lightbox');
     lightBoxContent.classList.add('lightbox-content');
-    lightBoxPrev.classList.add("fa", "fa-angle-left", "lightbox-prev");
-    lightBoxNext.classList.add("fa", "fa-angle-right", "lightbox-next");
+    
     
     lightBoxContainer.appendChild(lightBoxContent);
     lightBoxContent.appendChild(lightBoxImg);
-    lightBoxImg.appendChild(lightBoxPrev);
-    lightBoxPrev.appendChild(lightBoxNext);
+    
     document.body.appendChild(lightBoxContainer);
     
     
@@ -77,14 +82,7 @@
     function sliderImage(i){
         showLightBox(index += i);
     }
-    function prevImage(){
-        sliderImage(-1);
-    }
-    function nextImage(){
-        sliderImage(1);
-    }
-    lightBoxPrev.addEventListener("click",prevImage);
-    lightBoxNext.addEventListener("click",nextImage);
+    
     
     function closeLightBox(){
         if(this === event.target){
